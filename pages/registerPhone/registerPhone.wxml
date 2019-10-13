@@ -1,0 +1,23 @@
+<view>
+    <view class="registerPhone">
+      <view class="user-info">
+        <image src="{{userInfo.avatarUrl}}" mode="aspectFit" />
+        <view class="name">
+          {{userInfo.nickName}}
+        </view>
+      </view>
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="display-flex form-cell">
+          <input name="phone" bindinput="bindPhoneInput" placeholder="请输入手机号" />
+        </view>
+        <view class="display-flex form-cell">
+          <input name="code" placeholder="请输入验证码" />
+          <button bindtap="getPhoneCode" disabled="{{smsDisable}}">{{smsDisable ? smsTime + 's' : '获取验证码'}}</button>
+        </view>
+        <button style="margin-top: 90rpx;" class="common-btn" form-type="submit" disabled="{{submitDisable}}">
+          开启缘分
+        </button>
+      </form>
+    </view>
+</view>
+

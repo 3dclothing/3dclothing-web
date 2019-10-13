@@ -1,0 +1,9 @@
+<!--components/noData/noData.wxml-->
+<view class='noDataPage'>
+  <block wx:if="{{type === 1}}">
+    <text>没有相关结果</text>
+  </block>
+  <block wx:else>
+    <text>暂时没有数据，换个城市试试～</text>
+  </block>
+</view>

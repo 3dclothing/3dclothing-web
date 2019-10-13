@@ -1,0 +1,51 @@
+.registerInfo {
+  
+}
+
+.registerInfo .info-cell {
+  display: flex;
+  align-items: center;
+  margin: 30rpx 0;
+  font-size: 32rpx;
+  background: #f8f0fde3;
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+  color: #666666;
+}
+
+.registerInfo picker {
+  flex: 1;
+  padding: 20rpx;
+  text-align: right;
+}
+
+.registerInfo input {
+  flex: 1;
+  padding: 20rpx;
+}
+
+/* .registerInfo icon{
+  padding-right: 15rpx;
+} */
+
+.registerInfo .pleft_5 {
+  padding-left: 10rpx;
+  width: 54rpx;
+}
+
+.registerInfo .title {
+  font-size: 32rpx;
+  color: #333333;
+  padding: 20rpx 0;
+}
+
+.registerInfo .block {
+  padding: 4rpx 18rpx;
+  display: inline-block;
+  border-radius: 30rpx;
+  border: 1px solid #C0BCBC;
+  color: #262323;
+  font-size: 14px;
+  margin: 10rpx 0;
+  margin-right: 10rpx;
+}

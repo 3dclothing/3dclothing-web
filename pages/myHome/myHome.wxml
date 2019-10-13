@@ -1,0 +1,70 @@
+<!-- pages/myHome/myHome.wxml -->
+<view class='myHome'>
+  <view class='display-flex home-head'>
+    <image class='head-img' src='{{user.avatarUrl}}' />
+    <view class='flex-full'>{{user.nickName}}</view>
+    <Icon wx:if='{{userInfo.hasShop}}' iconName='namecard' width='30px' height='40rpx;' bindtap='goNamecard'></Icon>
+  </view>
+  <view class='display-flex home-center'>
+    <view bindtap="goFateList" data-type="1">
+      <view class='number'>{{likeMe}}</view>
+      <view class='small-text'>喜欢我</view>
+    </view>
+    <view bindtap="goFateList"  data-type="2">
+      <view class='number'>{{meLike}}</view>
+      <view class='small-text'>我喜欢</view>
+    </view>
+    <view bindtap="goFateList"  data-type="3">
+      <view class='number'>{{likeEachOther}}</view>
+      <view class='small-text'>相互喜欢</view>
+    </view>
+  </view>
+
+  <view class="info-percent">
+    <view class="display-flex">
+      <view>信息完成度</view>
+      <view class="number">
+        {{userInfo.finishRate}}%
+      </view>
+      <view class="flex-full">
+        <progress percent='{{userInfo.finishRate}}' activeColor="#E39BF0" border-radius="4" stroke-width="8" />      
+      </view>
+    </view>
+  </view>
+
+  <view style="padding: 0 30rpx; background:#ffffff;">
+    <view class='display-flex home-cell-list' bindtap='myImages'>
+      <!--<icon iconName="car" width='40rpx' height='24rpx' />-->
+      <text class='small-text flex-full'>我的相册</text>
+      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+    </view>
+    <view class='display-flex home-cell-list' bindtap='register'>
+      <!--<icon iconName="shop" width='40rpx' height='40rpx' />-->
+      <text class='small-text flex-full'>我的资料</text>
+      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+    </view>
+   
+    <view class='display-flex home-cell-list' bindtap='goMatchStandard'>
+      <!--<icon iconName="qrcode" width='32rpx' height='32rpx' style="padding:4rpx;"/>-->
+      <text class='small-text flex-full'>择偶条件</text>
+      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+    </view>
+     <view class='display-flex home-cell-list' bindtap='goMatchmaker'>
+      <!--<icon iconName="qrcode" width='32rpx' height='32rpx' style="padding:4rpx;"/>-->
+      <text class='small-text flex-full'>红娘</text>
+      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+    </view>
+
+    <!--<view class='display-flex home-cell-list' bindtap='goFeedback'>
+      <icon iconName="feedback" width='40rpx' height='40rpx' />
+      <text class='small-text flex-full'>分享</text>
+      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+    </view>
+    <view class='display-flex home-cell-list' bindtap='goXlcsList' 
+          style="border-bottom: 2rpx solid #efefef;">
+      <icon iconName="feedback" width='40rpx' height='40rpx' />
+      <text class='small-text flex-full'>心理测试</text>
+      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+    </view>-->
+ </view>
+</view>

@@ -1,0 +1,73 @@
+<view class='registerPage'>
+  <view class='subtitle'>
+    我的相册
+  </view>
+  <form bindsubmit="onSubmit" bindreset="formReset">
+    <view class='info-box'>
+      <!--<view class='info-cell display-flex'>
+        <view class="flex_1">
+          <view>封面图片</view>
+          <view class='small-text'></view>
+        </view>
+        <view class="weui-uploader">
+          <view class="weui-uploader__bd">
+            <block wx:if="{{indexImage !== ''}}">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <view class="weui-uploader__file" bindtap="chooseIndexImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{indexImage}}" mode="aspectFill" />
+                </view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseIndexImage"></view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>-->
+      <view class='info-cell'>
+        <view class='wechat'>
+          <view>图片上传</view>
+        </view>
+        <view class="weui-uploader">
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{oldImages}}" wx:key="*this">
+                <view class="weui-uploader__file" id="{{item}}">
+                  <icon class="icon-del" iconName='del' width='15px' height='15px'
+                    catchtap='delImage' data-array='oldImages' data-index='{{index}}'/>                  
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:for="{{uploadImgs}}" wx:key="*this">
+                <view class="weui-uploader__file" id="{{item}}">
+                  <icon class="icon-del" iconName='del' width='15px' height='15px'
+                    catchtap='delImage'  data-array='uploadImgs' data-index='{{index}}'/>                  
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+            </view>
+            <view class="weui-uploader__input-box">
+              <view class="weui-uploader__input" bindtap="chooseOtherImage" 
+                    data-num='{{uploadImgs.length + oldImages.length}}'></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button form-type="submit" disable="{{submitDisable}}">保存</button>
+  </form>
+
+  <view hidden="{{popHidden}}">
+    <pickCity currentCity='{{currentCity}}' cityList='{{cityList}}' bind:pickevent="doSelect"></pickCity>
+  </view>
+
+  <view hidden="{{popHiddenBrand}}">
+    <pickBrand
+      currentBrand='{{currentBrand}}'
+      brandList='{{brandList}}'
+      hotBrandList='{{hotBrandList}}'
+      bind:pickevent="doSelectBrand"/>
+  </view>
+</view>

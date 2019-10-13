@@ -1,0 +1,25 @@
+.miniProgress {
+  background: #F5DEFC;
+  display: flex;
+  width: 100%;
+}
+
+.miniProgress .percent {
+  background: linear-gradient(to right, #E3AFFB, #AF35F2);
+  border-radius: 0 50rpx 50rpx 0;
+  width: 50%;
+  display: flex;
+  color: #ffffff;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+
+.miniProgress .type {
+  text-align: left;
+  padding-left: 20rpx;
+  flex: 1;
+}
+.miniProgress .text {
+  padding-right: 20rpx;
+}
+

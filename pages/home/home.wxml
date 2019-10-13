@@ -1,0 +1,46 @@
+<view class='home-page'>
+  <view class="head">
+    <image src="../../public/image/home-ad.jpg" />
+    <view class="intro">
+      <view style="width: 100%;">
+        <view style="font-size: 52rpx;">婚恋社</view>
+        <view style="text-align: center;font-size: 42rpx;">认真又好玩的婚配网站</view>
+      </view>
+    </view>
+    <!-- <view class="address">
+      地址: 嘉兴市嘉兴市嘉兴市XXXX
+    </view> -->
+  </view>
+  <view class="list">
+    <view class="list-box" bindtap="goXzys">
+      <text>星座运势</text>
+      <image src="../../public/image/xzys.png" mode="widthFix" />
+    </view>
+    <view class="list-box" bindtap="goXlcsList">
+      <text>心理测试</text>
+      <image src="../../public/image/xlcs.png" mode="widthFix" />
+    </view>
+    <view class="list-box" bindtap="goMatch">
+      <text>星座配对</text>
+      <image src="../../public/image/xzpd.png" mode="widthFix" />
+    </view>
+  </view>
+
+  <view class="content-block">
+    <view class="title">
+      星座运势
+    </view>
+    <view class="block-cell" bindtap="getHoroscopet" data-type="today">今日星座运势</view>
+    <view class="block-cell" bindtap="getHoroscopet" data-type="month">本月星座运势</view>
+  </view>
+
+  <view class="content-block">
+    <view class="title">
+      心理测试
+    </view>
+    <block wx:for="{{psyTest}}" wx:key="{{item._id}}" >
+      <view class="block-cell" bindtap="doTest" data-id="{{item._id}}" data-type="{{item.type}}">{{item.name}}</view>
+    </block>
+  </view>
+</view>
+

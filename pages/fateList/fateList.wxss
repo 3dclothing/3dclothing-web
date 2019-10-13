@@ -1,0 +1,51 @@
+
+.fateListpage .tab {
+  font-size: 32rpx;
+  color: #3E3D3D;
+}
+
+.fateListpage .subtab {
+  flex: 0.33;
+  text-align: center;
+}
+
+.fateListpage .subtab .active {
+  color: #000000; 
+  font-weight: 600;
+  border-bottom: 4rpx solid #E39BF0;
+  line-height: 80rpx;
+  padding-bottom: 16rpx;
+}
+
+.fateListpage .item-cell {
+  padding: 20rpx 0;
+  border-bottom: 2px solid #efefef;
+  color: #7F8389;
+  font-size: 28rpx;
+}
+.fateListpage .head {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+  padding: 0 20rpx;
+}
+.fateListpage .theme-text {
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.fateListpage .head image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+}
+
+.fateListpage .time {
+  padding-right: 20rpx;
+}
+
+.no-data {
+  padding: 100rpx;
+  color: #999999;
+  text-align: center;
+}

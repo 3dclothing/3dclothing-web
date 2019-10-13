@@ -1,0 +1,72 @@
+
+.myHome {
+  background: #fbf9fc;
+}
+
+.myHome .home-head {
+  padding: 30rpx;
+  color: #ffffff;
+  background-color: #E39BF0;
+}
+
+.myHome .home-head .head-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+  border-radius: 100px;
+  border: 3px solid #ffffff;
+}
+
+.myHome .home-center {
+  align-items: center;
+  justify-content: space-around;
+  padding: 30rpx 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.myHome .small-text {
+  padding: 4rpx;
+  font-size: 32rpx;
+  color: #4A4A4A;
+  padding-left: 5px;
+}
+
+.myHome .home-cell {
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  background-color: #ffffff;
+}
+
+.myHome .home-cell-list {
+  padding: 20rpx 0rpx;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #efefef;
+}
+
+/* .myHome .home-cell-list + .home-cell-list {
+  background-color: #ffffff;
+  border-top: 2rpx solid #efefef;
+} */
+
+.myHome .marginTop_10 {
+  margin-top: 20rpx;
+}
+
+.myHome .number {
+  color: #E39BF0;
+  font-size: 42rpx;
+  padding: 10rpx;  
+}
+
+.myHome .info-percent {
+  margin: 30rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.myHome .info-percent .number {
+  font-size: 32rpx;
+  color: #BD10E0;
+  padding: 0 30rpx;
+}

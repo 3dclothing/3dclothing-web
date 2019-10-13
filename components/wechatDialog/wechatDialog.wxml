@@ -1,0 +1,30 @@
+<!--components/wechatDialog/wechatDialog.wxml-->
+<view class="wechatPage">
+  <view class="wechatPage-dialog">
+    <view class="xImg" bindtap="closeWechat">
+      <Icon iconName="x" width="23px" height="23px;"/>
+    </view>
+    <block wx:if="{{qrcode}}">
+      <view class="wechat-img">
+        <image src="{{qrcode}}" mode="aspectFit"/>
+      </view>
+      <view >
+        <button class="btn" bindtap="saveWechat">
+          保存二维码
+        </button>
+      </view>
+      <view class="tips">
+        <view>1. 保存二维码</view>
+        <view>2. 微信扫一扫，添加店主为好友</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="tips">
+        <view>复制号码，添加店主为好友</view>
+      </view>
+      <view class="wechat-phone" >
+        <view>{{phone}}<text class="copy" bindtap="setClipboardData" data-phone='{{phone}}'>复制</text></view>
+      </view>
+    </block>
+  </view>
+</view>

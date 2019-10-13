@@ -1,0 +1,32 @@
+<view class="fateListpage">
+
+  <view class="display-flex tab">
+    <view class="subtab" bindtap="switchTab" data-index="1">
+      <text class='{{_active === "1" ? "active" : ""}}'>喜欢我</text>
+    </view>
+    <view class="subtab" bindtap="switchTab" data-index="2">
+      <text class='{{_active === "2" ? "active" : ""}}'>我喜欢</text>
+    </view>
+    <view class="subtab" bindtap="switchTab" data-index="3">
+      <text class='{{_active === "3" ? "active" : ""}}'>相互喜欢</text>
+    </view>
+  </view>
+
+  <block wx:if="{{listLikes.length > 0}}">
+    <view class="display-flex item-cell" wx:for="{{listLikes}}" bindtap="userDetail" data-openid="{{item.openid}}" wx:key="{{item.id}}">
+      <view class="head">
+        <image src="{{item.avatarUrl}}" />
+      </view>
+      <view class="flex-full">
+        <view class="theme-text">{{item.nickName}}</view>
+        <view>{{item.age}}  {{item.education}}</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="no-data">
+      暂无数据
+    </view>
+  </block>
+
+</view>

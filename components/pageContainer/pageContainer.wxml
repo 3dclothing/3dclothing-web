@@ -1,0 +1,6 @@
+
+<view class="page-container">
+  <view class="content-box">
+    <slot></slot>
+  </view>
+</view>

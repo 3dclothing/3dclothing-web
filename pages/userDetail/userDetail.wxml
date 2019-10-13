@@ -1,0 +1,96 @@
+<view class="userDetail">
+  <view style="background: #ffffff; padding-bottom: 30rpx;">
+    <view class="head">
+      <image src="{{userInfo.avatarUrl}}" />
+    </view>
+    <view class="outline">
+      <view class="display-flex" style="justify-content: center;padding-bottom: 30rpx;">
+        <text>{{userInfo.nickName}}</text>
+        <image  wx:if="{{userInfo.gender == '1'}}" src="../../public/image/male01.png" />
+        <image wx:if="{{userInfo.gender == '2'}}" src="../../public/image/female01.png" />
+      </view>
+      <block wx:if="{{userInfo.weChatId}}">
+        <view class="small" style="padding-bottom: 5px;">
+          微信号：{{userInfo.weChatId}}
+        </view>
+      </block>
+      <view class="small">
+          {{userInfo.intro}}
+      </view>
+    </view>
+
+    <scroll-view scroll-x class='scroll-cell image-list'>
+      <block wx:for="{{userInfo.photos}}" wx:key="{{index}}">
+        <image src="{{item}}" mode="aspectFill" />
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class="detail">
+    <view class="detail-cell">
+      <view class="subtitle">基本信息</view>
+      <view>
+        <block wx:if="{{userInfo.constellation}}">
+          <view class="block">
+            {{userInfo.constellation}}
+          </view>
+        </block>
+        <block wx:if="{{userInfo.isMarriage}}">
+          <view class="block">
+            {{userInfo.isMarriage}}
+          </view>
+        </block>
+        <block wx:if="{{userInfo.workCity}}">
+          <view class="block">
+            坐标：{{userInfo.workCity}}
+          </view>
+        </block>
+        <block wx:if="{{userInfo.haveHouse}}">
+          <view class="block">
+           是否买房: {{userInfo.haveHouse}}
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="detail-cell">
+      <view class="subtitle">择偶标准</view>
+      <block wx:if="{{userInfo.objectInfo}}">
+        <view class="block">
+          身高：{{userInfo.objectInfo.height}}
+        </view>
+        <view class="block">
+          年龄：{{userInfo.objectInfo.age}}
+        </view>
+        <view class="block">
+          收入：{{userInfo.objectInfo.salary}}
+        </view>
+      </block>
+    </view>
+    <view class="detail-cell">
+      <view class="subtitle">其他信息</view>
+      <view>
+        <block wx:if="{{userInfo.hasChild}}">
+          <view class="block">
+            是否有小孩：{{userInfo.hasChild}}
+          </view>
+        </block>
+        <block wx:if="{{userInfo.hasChild}}">
+          <view class="block">
+            是否想要小孩：{{userInfo.hasChild}}
+          </view>
+        </block>
+        <block wx:if="{{userInfo.nationality}}">
+          <view class="block">
+            {{userInfo.nationality}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  
+  <view class="footer">
+    <button class="common-btn" bindtap="matchMaker">红娘牵线</button>
+    <button class="common-btn" bindtap="putUsersLike">喜欢ta</button>
+  </view>
+</view>

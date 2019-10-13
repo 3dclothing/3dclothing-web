@@ -1,0 +1,98 @@
+
+.userDetail {
+  background: #fbf9fc;
+  padding: 30rpx;
+  padding-bottom: 200rpx;
+  padding-top: 30rpx;
+}
+
+.userDetail .head,
+.userDetail .head image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 150rpx;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+}
+
+.userDetail .outline {
+  margin: 80rpx 80rpx 30rpx 80rpx;
+  box-shadow: 0 4rpx 8rpx #00000050;
+  color: #333333;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 40rpx 0;
+  background: #ffffff;
+}
+
+.userDetail .outline image {
+  width: 36rpx;
+  height: 36rpx;
+  padding: 0 20rpx;
+}
+
+
+.userDetail .outline .small {
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.userDetail .scroll-cell {
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 30rpx;
+}
+
+.userDetail .scroll-cell image {
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.userDetail .scroll-cell image + image {
+  padding-left: 20rpx;
+}
+
+.userDetail .detail {
+  /* padding: 30rpx; */
+}
+
+.userDetail .detail-cell {
+  padding: 30rpx 0;
+  margin-top: 20rpx;
+  background: #ffffff;
+  padding: 30rpx;
+}
+
+.userDetail .detail .subtitle {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 600;
+  padding-bottom: 30rpx;  
+}
+
+.userDetail .detail .block {
+  padding: 6rpx 20rpx;
+  display: inline-block;
+  border-radius: 8rpx;
+  border: 1px solid #C0BCBC;
+  color: #666666;
+  font-size: 16px;
+  margin: 10rpx 0;
+  margin-right: 40rpx;
+}
+
+.userDetail .footer {
+  position: fixed;
+  bottom: 40rpx;
+  display: flex;
+  width: calc(100% - 30px);
+}
+
+.userDetail .footer button {
+  line-height: 70rpx;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  width: 200rpx;
+}

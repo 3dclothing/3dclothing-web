@@ -1,0 +1,56 @@
+
+.loadingPage {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-top: 100rpx;
+  color: #4A4A4A;
+  font-size: 28rpx;
+}
+
+.loadingPage .cover-page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  opacity: 0.9;
+}
+
+.loadingPage .cover-page .text {
+  font-size: 40rpx;
+  color: #ffffff;
+  padding: 160rpx 0;
+}
+
+.loadingPage .begin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingPage image {
+  width: 100px;
+  padding-right: 30px;
+}
+
+.loadingPage button { 
+   line-height: 60rpx;
+   font-size: 32rpx;
+   margin-top: 45%;
+}
+
+.loadingPage button::after{ 
+  border: none; 
+}
+
+.loadingPage .tips {
+  position: fixed;
+  bottom: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.loadingPage .tips text {
+  color: #179b16;
+}

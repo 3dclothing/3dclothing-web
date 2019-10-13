@@ -1,0 +1,155 @@
+<view class='registerPage'>
+  <form bindsubmit="doSubmit" bindreset="formReset">
+    <view class='info-box'>
+      <view class='info-cell display-flex'>
+        <text>昵称</text>
+        <input type="digit" class="align-right" name="nickName" value="{{nickName}}"
+          maxlength="7" placeholder="请填写昵称" placeholder-class="placeholder"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>微信号</text>
+        <input type="digit" class="align-right" name="weChatId" value="{{weChatId}}"
+          maxlength="7" placeholder="请填写微信号" placeholder-class="placeholder"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>性别</text>
+        <view class="{{ gender ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker bindchange="bindGenderChange" value="{{genderIndex}}" range="{{genderArray}}">
+            <view class="picker">
+              {{genderArray[(gender - 1)] ? genderArray[(gender - 1)] : '请选择'}}
+              <input hidden="true" name="gender" value="{{gender}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>生日</text>
+        <view class="{{ birth ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker mode="date" value="{{birth}}" start="1980-01-01" 
+                  end="{{dateNow}}" bindchange="bindBirthChange">
+            <view class="picker">
+              {{birth ? birth : '请选择'}}
+              <input hidden="true" name="birth" value="{{birth}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>身高</text>
+        <input type="digit" class="align-right" name="height" value="{{height}}" 
+          maxlength="10" placeholder="请填写身高" placeholder-class="placeholder"/>
+        <view class='pleft_5'>cm</view>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>月收入</text>
+        <view class="{{ salary ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker bindchange="bindSalaryChange" value="{{salaryIndex}}" range="{{salaryArray}}">
+            <view class="picker">
+              {{salary ? salary : '请选择'}}
+              <input hidden="true" name="salary" value="{{salary}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>工作地区</text>
+        <view class="{{ workProvince ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">
+              {{workProvince ? workProvince+ ' ' + workCity + ' ' + workRegion : '请选择'}}
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>学历</text>
+        <view class="{{ education ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker bindchange="bindEducationChange" value="{{education}}" range="{{educationArray}}">
+            <view class="picker">
+              {{education ? education : '请选择'}}
+              <input hidden="true" name="education" value="{{education}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>婚姻状况</text>
+        <view class="{{ isMarriage ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker bindchange="bindMarriageChange" value="{{isMarriage}}" range="{{isMarriageArray}}">
+            <view class="picker">
+              {{isMarriage ? isMarriage : '请选择'}}
+              <input hidden="true" name="isMarriage" value="{{isMarriage}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>是否有孩子</text>
+        <view class="{{ hasChild ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker bindchange="bindHasChildChange" value="{{hasChild}}" range="{{hasChildArray}}">
+            <view class="picker">
+              {{hasChild ? hasChild : '请选择'}}
+              <input hidden="true" name="hasChild" value="{{hasChild}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>是否想要孩子</text>
+        <view class="{{ wantChild ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker bindchange="bindWantChildChange" value="{{wantChild}}" range="{{wantChildArray}}">
+            <view class="picker">
+              {{wantChild ? wantChild : '请选择'}}
+              <input hidden="true" name="wantChild" value="{{wantChild}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+       <view class='info-cell display-flex'>
+        <text>职业</text>
+        <view class="{{ jobGeneral ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{jobJson}}" range="{{multiArray}}">
+            <view class="picker">
+              {{jobGeneral ? jobGeneral + ' ' + jobDetail : '请选择'}}
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+
+      <view class='info-cell display-flex'>
+        <text>买房情况</text>
+        <view class="{{ haveHouse ? 'flex-full align-right' : 'flex-full align-right placeholder'}}">
+          <picker bindchange="bindHaveHouseChange" value="{{haveHouse}}" range="{{haveHouseArray}}">
+            <view class="picker">
+              {{haveHouse ? haveHouse : '请选择'}}
+              <input hidden="true" name="haveHouse" value="{{haveHouse}}"/>
+            </view>
+          </picker>
+        </view>
+        <icon iconName='arrowRight' width="7px" height="12px"/>
+      </view>
+    </view>
+    <button form-type="submit" disable="{{submitDisable}}">保存</button>
+  </form>
+
+</view>

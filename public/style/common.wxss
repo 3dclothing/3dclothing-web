@@ -1,0 +1,46 @@
+
+
+.display-flex {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.flex-full {
+  flex: 1;
+}
+
+.common-btn {
+  color: #ffffff;
+  font-size: 32rpx;
+  /* background: linear-gradient(to right, #D979F6, #F16E8C); */
+  background: #E39BF0;
+}
+
+.common-btn::after{ 
+  border: none;
+}
+
+/********** 注册部分begin *********/
+.subtitle {
+  display: flex;
+  align-items: center;
+  font-size: 44rpx;
+  color: #333333;
+}
+
+
+.footer-container {
+  position: absolute;
+  bottom: 32rpx;
+  width: calc(100% - 60rpx);
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+}
+
+.footer-container .jump-over {
+  padding: 20rpx;
+}
+
+/********** 注册部分end *********/

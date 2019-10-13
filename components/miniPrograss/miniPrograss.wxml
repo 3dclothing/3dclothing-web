@@ -1,0 +1,9 @@
+<view class="miniProgress">
+  <view class="percent" style="width: {{percent}}%;">
+    <view class="type">{{type}}</view>
+    <view class="text">
+      {{percent}}分
+    </view>
+  </view>
+  
+</view>
