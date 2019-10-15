@@ -5,13 +5,13 @@
 
 .myHome .home-head {
   padding: 30rpx;
-  color: #ffffff;
-  background-color: #E39BF0;
+  color: #000000;
+  background-color: #FFFFFF;
 }
 
 .myHome .home-head .head-img {
-  width: 120rpx;
-  height: 120rpx;
+  width: 184rpx;
+  height: 184rpx;
   margin-right: 30rpx;
   border-radius: 100px;
   border: 3px solid #ffffff;

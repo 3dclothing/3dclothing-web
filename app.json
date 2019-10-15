@@ -18,8 +18,10 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
     "color": "#90949C",
     "selectedColor": "#E39BF0",
+    "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/home/home",
@@ -46,5 +48,6 @@
     "scope.userLocation": {
       "desc": "您的位置信息将用来为您提供更好的数据搜索使用"
     }
-  }
+  },
+  "usingComponents": {}
 }

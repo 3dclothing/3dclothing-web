@@ -1,118 +1,142 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const Api = require("../../service/api.service");
+
+import * as Api from '../../service/api.service';
+
 Page({
-    data: {
-        user: { openid: '' },
-        userInfo: {},
-        userStatistics: {},
-        pageLoaded: false,
-        meLike: 0,
-        likeMe: 0,
-        likeEachOther: 0,
-    },
-    onLoad: function () {
-        let _this = this;
-        wx.getStorage({
-            key: 'user',
-            success: function (res) {
-                _this.setData({
-                    user: res.data
-                });
-            },
-        });
-        this.getUserInfo();
-        this.getUsersLikeCount();
+  data: {
+    user: { openid: '' },
+    userInfo: {},
+    userStatistics: {},
+    pageLoaded: false,
+    meLike: 0,
+    likeMe: 0,
+    likeEachOther: 0,
+  },
+
+  onLoad: function () {
+    let _this = this
+    wx.getStorage({
+      key: 'user',
+      success: function(res) {
+        _this.setData({
+          user: res.data
+        })
+      },
+    });
+    this.getUserInfo();
+    this.getUsersLikeCount();
+    this.setData({
+      pageLoaded: true,
+    })
+  },
+
+  /** 获取用户信息 */
+  getUserInfo() {
+    let _this = this;
+    wx.getStorage({
+      key: 'user',
+      success: function (res) {
+        const { openid } = res.data;
+        _this.requestForUserInfo(openid);
+      },
+    });
+  },
+  requestForUserInfo(openid) {
+    Api.getUserInfo(openid).then((result) => {
+      if (result) {
+        const userInfo = result.data;
         this.setData({
-            pageLoaded: true,
+          userInfo,
+          // userStatistics: userInfo.statistics,
         });
-    },
-    getUserInfo() {
-        let _this = this;
-        wx.getStorage({
-            key: 'user',
-            success: function (res) {
-                const { openid } = res.data;
-                _this.requestForUserInfo(openid);
-            },
+        //   wx.setStorage({
+        //     key: 'userShopInfo',
+        //     data: userInfo,
+        //   });
+      }
+    });
+  },
+
+  /** 获取喜欢的类别和数量 */
+  getUsersLikeCount() {
+    Api.getUsersLikeCount().then((result) => {
+      if (result) {
+        const usersLikeCount = result.data;
+        let meLike, likeMe, likeEachOther;
+        usersLikeCount.forEach((e) => {
+          if (e.type === "meLike") {
+            meLike = e.count;
+          } else if (e.type === "likeMe") {
+            likeMe = e.count;
+          } else {
+            likeEachOther = e.count;
+          }
         });
-    },
-    requestForUserInfo(openid) {
-        Api.getUserInfo(openid).then((result) => {
-            if (result) {
-                const userInfo = result.data;
-                this.setData({
-                    userInfo,
-                });
-            }
+        this.setData({
+          meLike,
+          likeMe,
+          likeEachOther,
         });
-    },
-    getUsersLikeCount() {
-        Api.getUsersLikeCount().then((result) => {
-            if (result) {
-                const usersLikeCount = result.data;
-                let meLike, likeMe, likeEachOther;
-                usersLikeCount.forEach((e) => {
-                    if (e.type === "meLike") {
-                        meLike = e.count;
-                    }
-                    else if (e.type === "likeMe") {
-                        likeMe = e.count;
-                    }
-                    else {
-                        likeEachOther = e.count;
-                    }
-                });
-                this.setData({
-                    meLike,
-                    likeMe,
-                    likeEachOther,
-                });
-            }
-        });
-    },
-    goXlcsList() {
-        wx.navigateTo({
-            url: `../xlcsList/xlcsList`,
-        });
-    },
-    register() {
-        wx.navigateTo({
-            url: `../register/register`,
-        });
-    },
-    myImages() {
-        wx.navigateTo({
-            url: `../myImages/myImages`,
-        });
-    },
-    goMatchStandard() {
-        wx.navigateTo({
-            url: `../registerStandard/registerStandard?type=usercenter`,
-        });
-    },
-    goMatchmaker() {
-        wx.navigateTo({
-            url: `../matchmaker/matchmaker`,
-        });
-    },
-    goFateList(e) {
-        const { type } = e.currentTarget.dataset;
-        wx.navigateTo({
-            url: `../fateList/fateList?type=${type}`,
-        });
-    },
-    onReady: function () {
-    },
-    onShow: function () {
-        const { pageLoaded } = this.data;
-        if (pageLoaded) {
-            this.getUserInfo();
-        }
-    },
-    onHide: function () {
-    },
-    onUnload: function () {
-    },
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibXlIb21lLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibXlIb21lLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsaURBQWlEO0FBRWpELElBQUksQ0FBQztJQUNILElBQUksRUFBRTtRQUNKLElBQUksRUFBRSxFQUFFLE1BQU0sRUFBRSxFQUFFLEVBQUU7UUFDcEIsUUFBUSxFQUFFLEVBQUU7UUFDWixjQUFjLEVBQUUsRUFBRTtRQUNsQixVQUFVLEVBQUUsS0FBSztRQUNqQixNQUFNLEVBQUUsQ0FBQztRQUNULE1BQU0sRUFBRSxDQUFDO1FBQ1QsYUFBYSxFQUFFLENBQUM7S0FDakI7SUFFRCxNQUFNLEVBQUU7UUFDTixJQUFJLEtBQUssR0FBRyxJQUFJLENBQUE7UUFDaEIsRUFBRSxDQUFDLFVBQVUsQ0FBQztZQUNaLEdBQUcsRUFBRSxNQUFNO1lBQ1gsT0FBTyxFQUFFLFVBQVMsR0FBRztnQkFDbkIsS0FBSyxDQUFDLE9BQVEsQ0FBQztvQkFDYixJQUFJLEVBQUUsR0FBRyxDQUFDLElBQUk7aUJBQ2YsQ0FBQyxDQUFBO1lBQ0osQ0FBQztTQUNGLENBQUMsQ0FBQztRQUNILElBQUksQ0FBQyxXQUFXLEVBQUUsQ0FBQztRQUNuQixJQUFJLENBQUMsaUJBQWlCLEVBQUUsQ0FBQztRQUN6QixJQUFJLENBQUMsT0FBUSxDQUFDO1lBQ1osVUFBVSxFQUFFLElBQUk7U0FDakIsQ0FBQyxDQUFBO0lBQ0osQ0FBQztJQUdELFdBQVc7UUFDVCxJQUFJLEtBQUssR0FBRyxJQUFJLENBQUM7UUFDakIsRUFBRSxDQUFDLFVBQVUsQ0FBQztZQUNaLEdBQUcsRUFBRSxNQUFNO1lBQ1gsT0FBTyxFQUFFLFVBQVUsR0FBRztnQkFDcEIsTUFBTSxFQUFFLE1BQU0sRUFBRSxHQUFHLEdBQUcsQ0FBQyxJQUFJLENBQUM7Z0JBQzVCLEtBQUssQ0FBQyxrQkFBa0IsQ0FBQyxNQUFNLENBQUMsQ0FBQztZQUNuQyxDQUFDO1NBQ0YsQ0FBQyxDQUFDO0lBQ0wsQ0FBQztJQUNELGtCQUFrQixDQUFDLE1BQWM7UUFDL0IsR0FBRyxDQUFDLFdBQVcsQ0FBQyxNQUFNLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxNQUFXLEVBQUUsRUFBRTtZQUMzQyxJQUFJLE1BQU0sRUFBRTtnQkFDVixNQUFNLFFBQVEsR0FBRyxNQUFNLENBQUMsSUFBSSxDQUFDO2dCQUM3QixJQUFJLENBQUMsT0FBUSxDQUFDO29CQUNaLFFBQVE7aUJBRVQsQ0FBQyxDQUFDO2FBS0o7UUFDSCxDQUFDLENBQUMsQ0FBQztJQUNMLENBQUM7SUFHRCxpQkFBaUI7UUFDZixHQUFHLENBQUMsaUJBQWlCLEVBQUUsQ0FBQyxJQUFJLENBQUMsQ0FBQyxNQUFXLEVBQUUsRUFBRTtZQUMzQyxJQUFJLE1BQU0sRUFBRTtnQkFDVixNQUFNLGNBQWMsR0FBRyxNQUFNLENBQUMsSUFBSSxDQUFDO2dCQUNuQyxJQUFJLE1BQU0sRUFBRSxNQUFNLEVBQUUsYUFBYSxDQUFDO2dCQUNsQyxjQUFjLENBQUMsT0FBTyxDQUFDLENBQUMsQ0FBTSxFQUFFLEVBQUU7b0JBQ2hDLElBQUksQ0FBQyxDQUFDLElBQUksS0FBSyxRQUFRLEVBQUU7d0JBQ3ZCLE1BQU0sR0FBRyxDQUFDLENBQUMsS0FBSyxDQUFDO3FCQUNsQjt5QkFBTSxJQUFJLENBQUMsQ0FBQyxJQUFJLEtBQUssUUFBUSxFQUFFO3dCQUM5QixNQUFNLEdBQUcsQ0FBQyxDQUFDLEtBQUssQ0FBQztxQkFDbEI7eUJBQU07d0JBQ0wsYUFBYSxHQUFHLENBQUMsQ0FBQyxLQUFLLENBQUM7cUJBQ3pCO2dCQUNILENBQUMsQ0FBQyxDQUFDO2dCQUNILElBQUksQ0FBQyxPQUFRLENBQUM7b0JBQ1osTUFBTTtvQkFDTixNQUFNO29CQUNOLGFBQWE7aUJBQ2QsQ0FBQyxDQUFDO2FBQ0o7UUFDSCxDQUFDLENBQUMsQ0FBQztJQUNMLENBQUM7SUFHRCxVQUFVO1FBQ1IsRUFBRSxDQUFDLFVBQVUsQ0FBQztZQUNaLEdBQUcsRUFBRSxzQkFBc0I7U0FDNUIsQ0FBQyxDQUFBO0lBQ0osQ0FBQztJQUVELFFBQVE7UUFDTixFQUFFLENBQUMsVUFBVSxDQUFDO1lBQ1osR0FBRyxFQUFFLHNCQUFzQjtTQUM1QixDQUFDLENBQUE7SUFDSixDQUFDO0lBRUQsUUFBUTtRQUNOLEVBQUUsQ0FBQyxVQUFVLENBQUM7WUFDWixHQUFHLEVBQUUsc0JBQXNCO1NBQzVCLENBQUMsQ0FBQTtJQUNKLENBQUM7SUFFRCxlQUFlO1FBQ2IsRUFBRSxDQUFDLFVBQVUsQ0FBQztZQUNaLEdBQUcsRUFBRSxzREFBc0Q7U0FDNUQsQ0FBQyxDQUFBO0lBQ0osQ0FBQztJQUdELFlBQVk7UUFDVixFQUFFLENBQUMsVUFBVSxDQUFDO1lBQ1osR0FBRyxFQUFFLDBCQUEwQjtTQUNoQyxDQUFDLENBQUE7SUFDSixDQUFDO0lBR0QsVUFBVSxDQUFDLENBQU07UUFFZixNQUFNLEVBQUUsSUFBSSxFQUFFLEdBQUcsQ0FBQyxDQUFDLGFBQWEsQ0FBQyxPQUFPLENBQUM7UUFDekMsRUFBRSxDQUFDLFVBQVUsQ0FBQztZQUNaLEdBQUcsRUFBRSw2QkFBNkIsSUFBSSxFQUFFO1NBQ3pDLENBQUMsQ0FBQTtJQUNKLENBQUM7SUFFRCxPQUFPLEVBQUU7SUFFVCxDQUFDO0lBRUQsTUFBTSxFQUFFO1FBQ04sTUFBTSxFQUFFLFVBQVUsRUFBRSxHQUFHLElBQUksQ0FBQyxJQUFJLENBQUM7UUFDakMsSUFBSSxVQUFVLEVBQUU7WUFDZCxJQUFJLENBQUMsV0FBVyxFQUFFLENBQUM7U0FDcEI7SUFDSCxDQUFDO0lBRUQsTUFBTSxFQUFFO0lBRVIsQ0FBQztJQUVELFFBQVEsRUFBRTtJQUVWLENBQUM7Q0FDRixDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCAqIGFzIEFwaSBmcm9tICcuLi8uLi9zZXJ2aWNlL2FwaS5zZXJ2aWNlJztcblxuUGFnZSh7XG4gIGRhdGE6IHtcbiAgICB1c2VyOiB7IG9wZW5pZDogJycgfSxcbiAgICB1c2VySW5mbzoge30sXG4gICAgdXNlclN0YXRpc3RpY3M6IHt9LFxuICAgIHBhZ2VMb2FkZWQ6IGZhbHNlLFxuICAgIG1lTGlrZTogMCxcbiAgICBsaWtlTWU6IDAsXG4gICAgbGlrZUVhY2hPdGhlcjogMCxcbiAgfSxcblxuICBvbkxvYWQ6IGZ1bmN0aW9uICgpIHtcbiAgICBsZXQgX3RoaXMgPSB0aGlzXG4gICAgd3guZ2V0U3RvcmFnZSh7XG4gICAgICBrZXk6ICd1c2VyJyxcbiAgICAgIHN1Y2Nlc3M6IGZ1bmN0aW9uKHJlcykge1xuICAgICAgICBfdGhpcy5zZXREYXRhISh7XG4gICAgICAgICAgdXNlcjogcmVzLmRhdGFcbiAgICAgICAgfSlcbiAgICAgIH0sXG4gICAgfSk7XG4gICAgdGhpcy5nZXRVc2VySW5mbygpO1xuICAgIHRoaXMuZ2V0VXNlcnNMaWtlQ291bnQoKTtcbiAgICB0aGlzLnNldERhdGEhKHtcbiAgICAgIHBhZ2VMb2FkZWQ6IHRydWUsXG4gICAgfSlcbiAgfSxcblxuICAvKiog6I635Y+W55So5oi35L+h5oGvICovXG4gIGdldFVzZXJJbmZvKCkge1xuICAgIGxldCBfdGhpcyA9IHRoaXM7XG4gICAgd3guZ2V0U3RvcmFnZSh7XG4gICAgICBrZXk6ICd1c2VyJyxcbiAgICAgIHN1Y2Nlc3M6IGZ1bmN0aW9uIChyZXMpIHtcbiAgICAgICAgY29uc3QgeyBvcGVuaWQgfSA9IHJlcy5kYXRhO1xuICAgICAgICBfdGhpcy5yZXF1ZXN0Rm9yVXNlckluZm8ob3BlbmlkKTtcbiAgICAgIH0sXG4gICAgfSk7XG4gIH0sXG4gIHJlcXVlc3RGb3JVc2VySW5mbyhvcGVuaWQ6IHN0cmluZykge1xuICAgIEFwaS5nZXRVc2VySW5mbyhvcGVuaWQpLnRoZW4oKHJlc3VsdDogYW55KSA9PiB7XG4gICAgICBpZiAocmVzdWx0KSB7XG4gICAgICAgIGNvbnN0IHVzZXJJbmZvID0gcmVzdWx0LmRhdGE7XG4gICAgICAgIHRoaXMuc2V0RGF0YSEoe1xuICAgICAgICAgIHVzZXJJbmZvLFxuICAgICAgICAgIC8vIHVzZXJTdGF0aXN0aWNzOiB1c2VySW5mby5zdGF0aXN0aWNzLFxuICAgICAgICB9KTtcbiAgICAgICAgLy8gICB3eC5zZXRTdG9yYWdlKHtcbiAgICAgICAgLy8gICAgIGtleTogJ3VzZXJTaG9wSW5mbycsXG4gICAgICAgIC8vICAgICBkYXRhOiB1c2VySW5mbyxcbiAgICAgICAgLy8gICB9KTtcbiAgICAgIH1cbiAgICB9KTtcbiAgfSxcblxuICAvKiog6I635Y+W5Zac5qyi55qE57G75Yir5ZKM5pWw6YePICovXG4gIGdldFVzZXJzTGlrZUNvdW50KCkge1xuICAgIEFwaS5nZXRVc2Vyc0xpa2VDb3VudCgpLnRoZW4oKHJlc3VsdDogYW55KSA9PiB7XG4gICAgICBpZiAocmVzdWx0KSB7XG4gICAgICAgIGNvbnN0IHVzZXJzTGlrZUNvdW50ID0gcmVzdWx0LmRhdGE7XG4gICAgICAgIGxldCBtZUxpa2UsIGxpa2VNZSwgbGlrZUVhY2hPdGhlcjtcbiAgICAgICAgdXNlcnNMaWtlQ291bnQuZm9yRWFjaCgoZTogYW55KSA9PiB7XG4gICAgICAgICAgaWYgKGUudHlwZSA9PT0gXCJtZUxpa2VcIikge1xuICAgICAgICAgICAgbWVMaWtlID0gZS5jb3VudDtcbiAgICAgICAgICB9IGVsc2UgaWYgKGUudHlwZSA9PT0gXCJsaWtlTWVcIikge1xuICAgICAgICAgICAgbGlrZU1lID0gZS5jb3VudDtcbiAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgbGlrZUVhY2hPdGhlciA9IGUuY291bnQ7XG4gICAgICAgICAgfVxuICAgICAgICB9KTtcbiAgICAgICAgdGhpcy5zZXREYXRhISh7XG4gICAgICAgICAgbWVMaWtlLFxuICAgICAgICAgIGxpa2VNZSxcbiAgICAgICAgICBsaWtlRWFjaE90aGVyLFxuICAgICAgICB9KTtcbiAgICAgIH1cbiAgICB9KTtcbiAgfSxcblxuICAvKiog5b+D55CG5rWL6K+V5YiX6KGoICovXG4gIGdvWGxjc0xpc3QoKSB7XG4gICAgd3gubmF2aWdhdGVUbyh7XG4gICAgICB1cmw6IGAuLi94bGNzTGlzdC94bGNzTGlzdGAsXG4gICAgfSlcbiAgfSxcblxuICByZWdpc3RlcigpIHtcbiAgICB3eC5uYXZpZ2F0ZVRvKHtcbiAgICAgIHVybDogYC4uL3JlZ2lzdGVyL3JlZ2lzdGVyYCxcbiAgICB9KVxuICB9LFxuXG4gIG15SW1hZ2VzKCkge1xuICAgIHd4Lm5hdmlnYXRlVG8oe1xuICAgICAgdXJsOiBgLi4vbXlJbWFnZXMvbXlJbWFnZXNgLFxuICAgIH0pXG4gIH0sXG5cbiAgZ29NYXRjaFN0YW5kYXJkKCkge1xuICAgIHd4Lm5hdmlnYXRlVG8oe1xuICAgICAgdXJsOiBgLi4vcmVnaXN0ZXJTdGFuZGFyZC9yZWdpc3RlclN0YW5kYXJkP3R5cGU9dXNlcmNlbnRlcmAsXG4gICAgfSlcbiAgfSxcblxuICAvKiog57qi5aiYICovXG4gIGdvTWF0Y2htYWtlcigpOiBhbnkge1xuICAgIHd4Lm5hdmlnYXRlVG8oe1xuICAgICAgdXJsOiBgLi4vbWF0Y2htYWtlci9tYXRjaG1ha2VyYCxcbiAgICB9KVxuICB9LFxuXG4gIC8qKiDllpzmrKLkurrliJfooaggKi9cbiAgZ29GYXRlTGlzdChlOiBhbnkpIHtcbiAgICAvLyBjb25zdCBpZCA9IHRoaXMuZGF0YS51c2VySW5mby5TaG9wLmlkO1xuICAgIGNvbnN0IHsgdHlwZSB9ID0gZS5jdXJyZW50VGFyZ2V0LmRhdGFzZXQ7XG4gICAgd3gubmF2aWdhdGVUbyh7XG4gICAgICB1cmw6IGAuLi9mYXRlTGlzdC9mYXRlTGlzdD90eXBlPSR7dHlwZX1gLFxuICAgIH0pXG4gIH0sXG5cbiAgb25SZWFkeTogZnVuY3Rpb24gKCkge1xuXG4gIH0sXG5cbiAgb25TaG93OiBmdW5jdGlvbiAoKSB7XG4gICAgY29uc3QgeyBwYWdlTG9hZGVkIH0gPSB0aGlzLmRhdGE7XG4gICAgaWYgKHBhZ2VMb2FkZWQpIHtcbiAgICAgIHRoaXMuZ2V0VXNlckluZm8oKTtcbiAgICB9XG4gIH0sXG5cbiAgb25IaWRlOiBmdW5jdGlvbiAoKSB7XG5cbiAgfSxcblxuICBvblVubG9hZDogZnVuY3Rpb24gKCkge1xuXG4gIH0sXG59KSJdfQ==
+      }
+    });
+  },
+
+  /** 心理测试列表 */
+  goXlcsList() {
+    wx.navigateTo({
+      url: `../xlcsList/xlcsList`,
+    })
+  },
+
+  register() {
+    wx.navigateTo({
+      url: `../register/register`,
+    })
+  },
+
+  myImages() {
+    wx.navigateTo({
+      url: `../myImages/myImages`,
+    })
+  },
+
+  goMatchStandard() {
+    wx.navigateTo({
+      url: `../registerStandard/registerStandard?type=usercenter`,
+    })
+  },
+
+  /** 红娘 */
+  goMatchmaker() {
+    wx.navigateTo({
+      url: `../matchmaker/matchmaker`,
+    })
+  },
+
+  /** 喜欢人列表 */
+  goFateList(e) {
+    // const id = this.data.userInfo.Shop.id;
+    const { type } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `../fateList/fateList?type=${type}`,
+    })
+  },
+
+  onReady: function () {
+
+  },
+
+  onShow: function () {
+    const { pageLoaded } = this.data;
+    if (pageLoaded) {
+      this.getUserInfo();
+    }
+  },
+
+  onHide: function () {
+
+  },
+
+  onUnload: function () {
+
+  },
+})
