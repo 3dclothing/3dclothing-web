@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/home/home",
     "pages/registerPhone/registerPhone",
     "pages/register/register",
     "pages/registerInfo/registerInfo",
     "pages/myImages/myImages",
-    "pages/home/home",
     "pages/userDetail/userDetail",
     "pages/myHome/myHome",
     "pages/fateList/fateList",
@@ -16,6 +16,30 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "XXX",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#90949C",
+    "selectedColor": "#E39BF0",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "广场",
+        "iconPath": "public/image/menu_1.png",
+        "selectedIconPath": "public/image/menu_1_active.png"
+      },
+      {
+        "pagePath": "pages/fate/fate",
+        "text": "缘分",
+        "iconPath": "public/image/menu_2.png",
+        "selectedIconPath": "public/image/menu_2_active.png"
+      },
+      {
+        "pagePath": "pages/myHome/myHome",
+        "text": "我的",
+        "iconPath": "public/image/menu_3.png",
+        "selectedIconPath": "public/image/menu_3_active.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "permission": {

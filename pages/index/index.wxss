@@ -35,9 +35,10 @@
 }
 
 .loadingPage button { 
-   line-height: 60rpx;
+   line-height: 80rpx;
    font-size: 32rpx;
    margin-top: 45%;
+   width: 80%;
 }
 
 .loadingPage button::after{ 
@@ -45,6 +46,7 @@
 }
 
 .loadingPage .tips {
+  width: 100%;
   position: fixed;
   bottom: 50rpx;
   text-align: center;
