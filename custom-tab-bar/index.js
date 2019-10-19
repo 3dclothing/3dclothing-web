@@ -10,7 +10,7 @@ Component({
       "selectedIconPath": "../public/image/menu_1_active.png"
     },
     {
-      "pagePath": "../fate/fate",
+      "pagePath": "../clothing/clothing",
       "text": "缘分1",
       "iconPath": "../public/image/menu_2.png",
       "selectedIconPath": "../public/image/menu_2_active.png"
