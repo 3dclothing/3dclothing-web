@@ -5,7 +5,9 @@
         autoplay="true" interval="2000" duration="500">
         <block wx:for="{{background}}" wx:key="*this">
           <swiper-item>
-            <view class="swiper-item {{item}}"></view>
+            <view class="swiper-item {{item}}">
+              <image src="../../public/image/home-banner.png" mode="aspectFill" />
+            </view>
           </swiper-item>
         </block>
       </swiper>

@@ -5,62 +5,52 @@
     <view class='flex-full'>{{user.nickName}}</view>
   </view>
   <view class='display-flex home-center'>
-    <view bindtap="goFateList" data-type="1">
+    <view data-type="1">
       <view class='small-text'>试装：{{likeMe}}</view>
     </view>
-    <view bindtap="goFateList"  data-type="2">
+    <view data-type="2">
       <view class='small-text'>订单：{{meLike}}</view>
     </view>
-    <view bindtap="goFateList"  data-type="3">
+    <view data-type="3">
       <view class='small-text'>喜欢：{{likeEachOther}}</view>
     </view>
   </view>
 
-  <view class="info-percent">
-    <view class="display-flex">
-      <view>信息完成度</view>
-      <view class="number">
-        {{userInfo.finishRate}}%
-      </view>
-      <view class="flex-full">
-        <progress percent='{{userInfo.finishRate}}' activeColor="#E39BF0" border-radius="4" stroke-width="8" />      
-      </view>
+  <view class='display-flex home-center' style="border-top: 1rpx solid #D8D8D870">
+    <view data-type="1">
+      <icon iconName="nopay" width='51rpx' height='50rpx' />
+      <view class='small-text'>未付款</view>
+    </view>
+    <view data-type="2">
+      <icon iconName="payed" width='38rpx' height='46rpx' />
+      <view class='small-text'>已付款</view>
+    </view>
+    <view data-type="3">
+      <icon iconName="complete" width='38rpx' height='44rpx' />
+      <view class='small-text'>已完成</view>
+    </view>
+    <view data-type="4">
+      <icon iconName="logistics" width='58rpx' height='42rpx' />
+      <view class='small-text'>物流中心</view>
     </view>
   </view>
 
-  <view style="padding: 0 30rpx; background:#ffffff;">
-    <view class='display-flex home-cell-list' bindtap='myImages'>
-      <!--<icon iconName="car" width='40rpx' height='24rpx' />-->
-      <text class='small-text flex-full'>我的相册</text>
-      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+  <view style="padding: 0 30rpx;">
+    <view class='display-flex home-cell-list' >
+      <!--<icon iconName="car" width='44rpx' height='24rpx' />-->
+      <text class='small-text flex-full'>个人信息</text>
+      <icon iconName="arrowright" width='16rpx' height='24rpx' />
     </view>
-    <view class='display-flex home-cell-list' bindtap='register'>
-      <!--<icon iconName="shop" width='40rpx' height='40rpx' />-->
-      <text class='small-text flex-full'>我的资料</text>
-      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+    <view class='display-flex home-cell-list' >
+      <!--<icon iconName="shop" width='44rpx' height='40rpx' />-->
+      <text class='small-text flex-full'>地址管理</text>
+      <icon iconName="arrowright" width='16rpx' height='24rpx' />
     </view>
    
-    <view class='display-flex home-cell-list' bindtap='goMatchStandard'>
+    <view class='display-flex home-cell-list' >
       <!--<icon iconName="qrcode" width='32rpx' height='32rpx' style="padding:4rpx;"/>-->
-      <text class='small-text flex-full'>择偶条件</text>
-      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
+      <text class='small-text flex-full'>在线客服</text>
+      <icon iconName="arrowright" width='16rpx' height='24rpx' />
     </view>
-     <view class='display-flex home-cell-list' bindtap='goMatchmaker'>
-      <!--<icon iconName="qrcode" width='32rpx' height='32rpx' style="padding:4rpx;"/>-->
-      <text class='small-text flex-full'>红娘</text>
-      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
-    </view>
-
-    <!--<view class='display-flex home-cell-list' bindtap='goFeedback'>
-      <icon iconName="feedback" width='40rpx' height='40rpx' />
-      <text class='small-text flex-full'>分享</text>
-      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
-    </view>
-    <view class='display-flex home-cell-list' bindtap='goXlcsList' 
-          style="border-bottom: 2rpx solid #efefef;">
-      <icon iconName="feedback" width='40rpx' height='40rpx' />
-      <text class='small-text flex-full'>心理测试</text>
-      <icon iconName="arrowRight" width='16rpx' height='24rpx' />
-    </view>-->
  </view>
 </view>
