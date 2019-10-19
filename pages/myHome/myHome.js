@@ -105,10 +105,9 @@ Page({
     })
   },
 
-  /** 红娘 */
-  goMatchmaker() {
+  contract() {
     wx.navigateTo({
-      url: `../matchmaker/matchmaker`,
+      url: `../contract/contract`,
     })
   },
 

@@ -9,7 +9,8 @@
     "pages/userDetail/userDetail",
     "pages/myHome/myHome",
     "pages/fateList/fateList",
-    "pages/fate/fate"
+    "pages/clothing/clothing",
+    "pages/contract/contract"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,7 +31,7 @@
         "selectedIconPath": "public/image/menu_1_active.png"
       },
       {
-        "pagePath": "pages/fate/fate",
+        "pagePath": "pages/clothing/clothing",
         "text": "缘分",
         "iconPath": "public/image/menu_2.png",
         "selectedIconPath": "public/image/menu_2_active.png"

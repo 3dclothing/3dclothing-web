@@ -1,0 +1,26 @@
+
+<view class="matchmakerPage" >
+  <view class="cover-page">
+    
+    <view class="contract">
+      <view class="display-flex title">
+        <view class="{{active === '1' ? 'title-cell active' : 'title-cell'}}" bindtap="switchTab" data-active="1">电话联系</view>
+        <view class="{{active === '2' ? 'title-cell active' : 'title-cell'}}" bindtap="switchTab" data-active="2">微信联系</view>
+      </view>
+      <view class="contract-info" wx:if="{{active === '1'}}">
+        <view class="label">电话联系红娘</view>
+        <button class="common-btn" bindtap="phoneCall">拨打电话</button>
+      </view>
+      <view class="contract-info" wx:else>
+        <view>扫二维码添加红娘微信</view>
+        <image src="../../public/image/qrcode.jpg" mode="aspectFit" />
+      </view>
+    </view>
+    <view class="footer">
+      <!-- <view>
+        线下门门店有更多红娘提供更贴心的服务
+      </view> -->
+      <!-- <view>门店地址：xxxxxx</view> -->
+    </view>
+  </view>
+</view>

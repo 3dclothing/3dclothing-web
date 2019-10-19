@@ -53,7 +53,7 @@
    
     <view class='display-flex home-cell-list' >
       <!--<icon iconName="qrcode" width='32rpx' height='32rpx' style="padding:4rpx;"/>-->
-      <text class='small-text flex-full'>在线客服</text>
+      <text class='small-text flex-full' bindtap='contract'>在线客服</text>
       <icon iconName="arrowright" width='16rpx' height='24rpx' />
     </view>
  </view>

@@ -1,0 +1,71 @@
+.matchmakerPage {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-top: 100rpx;
+  color: #4A4A4A;
+  font-size: 28rpx;
+}
+.matchmakerPage .cover-page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.9;
+}
+
+.matchmakerPage .title {
+  padding: 30rpx;
+}
+
+.matchmakerPage .title-cell {
+  flex: 0.5;
+}
+
+.matchmakerPage .title .active {
+  /* border-right: 1rpx solid #601665; */
+  color: #601665;
+  
+}
+
+.matchmakerPage .contract {
+  margin-top: 200rpx;
+  background: #ffffff;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 32rpx;
+}
+
+.matchmakerPage .contract-info {
+  background: #ffffff;
+  text-align: center;
+  padding: 60rpx;
+  border-top: 1px solid #601665;
+  border-radius: 32rpx;
+  height: 300rpx;
+}
+
+.matchmakerPage .label {
+  padding: 60rpx;
+}
+
+.matchmakerPage .contract-info image {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.matchmakerPage .contract-info button {
+  margin-top: 80rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+}
+
+.matchmakerPage .footer {
+  position: absolute;
+  bottom: 40rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  padding-left: 40rpx;
+}

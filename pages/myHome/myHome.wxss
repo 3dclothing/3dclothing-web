@@ -76,7 +76,7 @@
   background: #AB0909;
   color: #ffffff;
   margin-top: -55px;
-  margin-left: 30px;
+  margin-left: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
