@@ -7,6 +7,8 @@
   padding: 30rpx;
   color: #000000;
   background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
 }
 
 .myHome .home-head .head-img {

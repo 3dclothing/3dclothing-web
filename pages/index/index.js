@@ -36,6 +36,9 @@ Page({
             wx.switchTab({
               url: '../home/home',
             })
+            // wx.navigateTo({
+            //   url: '../home/home',
+            // })
           }, 1500);
         } else {
           _this.getOpenid();
@@ -73,7 +76,7 @@ Page({
         })
       },
       fail: function (err) {
-        console.log('wx.login failed', err)
+        console.log('wx login failed', err)
       }
     })
   },

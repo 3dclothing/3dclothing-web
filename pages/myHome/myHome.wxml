@@ -1,6 +1,6 @@
 <!-- pages/myHome/myHome.wxml -->
 <view class='myHome'>
-  <view class='display-flex home-head'>
+  <view class='home-head'>
     <image class='head-img' src='{{user.avatarUrl}}' />
     <view class='flex-full'>{{user.nickName}}</view>
   </view>
