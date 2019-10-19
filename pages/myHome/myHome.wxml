@@ -20,18 +20,22 @@
     <view data-type="1">
       <icon iconName="nopay" width='51rpx' height='50rpx' />
       <view class='small-text'>未付款</view>
+      <view class="badge">1</view>
     </view>
     <view data-type="2">
       <icon iconName="payed" width='38rpx' height='46rpx' />
       <view class='small-text'>已付款</view>
+      <view class="badge">1</view>
     </view>
     <view data-type="3">
       <icon iconName="complete" width='38rpx' height='44rpx' />
       <view class='small-text'>已完成</view>
+      <view class="badge">15</view>
     </view>
     <view data-type="4">
       <icon iconName="logistics" width='58rpx' height='42rpx' />
       <view class='small-text'>物流中心</view>
+      <view class="badge">99+</view>
     </view>
   </view>
 

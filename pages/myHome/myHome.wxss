@@ -2,11 +2,11 @@
 .myHome {
   background: #fbf9fc;
   font-size: 28rpx;
+  color: #000000;
 }
 
 .myHome .home-head {
   padding: 30rpx;
-  color: #000000;
   background-color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -31,7 +31,6 @@
 
 .myHome .small-text {
   padding: 4rpx;
-  color: #4A4A4A;
   padding-left: 5px;
 }
 
@@ -47,11 +46,6 @@
   border-bottom: 1rpx solid #D8D8D860;
 }
 
-/* .myHome .home-cell-list + .home-cell-list {
-  background-color: #ffffff;
-  border-top: 2rpx solid #efefef;
-} */
-
 .myHome .marginTop_10 {
   margin-top: 20rpx;
 }
@@ -65,11 +59,25 @@
 .myHome .info-percent {
   margin: 30rpx;
   font-size: 28rpx;
-  color: #333333;
 }
 
 .myHome .info-percent .number {
   font-size: 32rpx;
   color: #BD10E0;
   padding: 0 30rpx;
+}
+
+.badge {
+  position: absolute;
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 26rpx;
+  font-size: 17rpx;
+  background: #AB0909;
+  color: #ffffff;
+  margin-top: -55px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
