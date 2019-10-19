@@ -22,6 +22,10 @@ App({
               }
             }
           })
+        } else {
+          wx.navigateTo({
+            url: '../index/index',
+          });
         }
       }
     })

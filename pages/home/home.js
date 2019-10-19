@@ -22,6 +22,7 @@ Page({
     pullDown: false,
     pullUp: false,
     horoscopeData: {},
+    background: ['item-1', 'item-2', 'item-3'],
   },
 
   onLoad () {
@@ -40,9 +41,7 @@ Page({
         })
       }
     } else {
-      wx.navigateTo({
-        url: '../index/index',
-      });
+      
     }
     let _this = this;
     wx.getStorage({
