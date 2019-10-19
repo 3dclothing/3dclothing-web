@@ -9,7 +9,7 @@
     <cover-image src="{{selected === '0' ? '../public/image/menu_1.png' : '../public/image/menu_1.png'}}"></cover-image>
     <cover-view style="color: {{selected === '0' ? selectedColor : color}}"></cover-view>
   </cover-view>
-  <cover-view  class="tab-bar-item" data-path="../fate/fate" data-index="1" bindtap="switchTab">
+  <cover-view  class="tab-bar-item" data-path="../clothing/clothing" data-index="1" bindtap="switchTab">
     <!--cover-image src="../public/image/menu_3_active.png"></cover-image-->
     <cover-view class="big-item">
       <cover-view style="font-size: 25px;padding-top: 10px;">VR</cover-view>
