@@ -32,8 +32,8 @@
 }
 
 .expressDetail .order-info image {
-  width: 105px;
-  height: 111px;
+  width: 76px;
+  height: 76px;
   padding: 0 20rpx;
 }
 
