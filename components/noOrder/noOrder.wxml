@@ -1,0 +1,10 @@
+
+<view class="noOrder">
+  <view class="content">
+    <image src="../../public/image/no-order.png" mode="aspectFit" />
+    <view class="text">
+      还没有相关订单
+    </view>
+    <slot></slot>
+  </view>
+</view>

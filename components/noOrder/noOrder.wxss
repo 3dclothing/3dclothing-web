@@ -1,0 +1,19 @@
+.noOrder {
+  background: #F7F7F7;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.noOrder .content {
+  margin-top: 300rpx;
+  text-align: center;
+}
+.noOrder .content image {
+  width: 137px;
+  height: 137px;
+}
+.noOrder .content .text {
+  padding: 30rpx;
+  color: #9B9B9B;
+}

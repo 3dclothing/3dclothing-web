@@ -1,0 +1,4 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view>
+  <noOrder />
+</view>

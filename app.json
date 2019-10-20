@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/orderDetail/orderDetail",
     "pages/index/index",
     "pages/registerPhone/registerPhone",
     "pages/register/register",
@@ -51,6 +52,7 @@
     }
   },
   "usingComponents": {
-    "icon": "components/icon/icon"
+    "icon": "components/icon/icon",
+    "noOrder": "components/noOrder/noOrder"
   }
 }
