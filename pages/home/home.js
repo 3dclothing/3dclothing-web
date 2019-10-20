@@ -26,6 +26,7 @@ Page({
   },
 
   onLoad () {
+    wx.showTabBar();
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -126,6 +127,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showTabBar();
     if (this.data.pageLoaded === true) {
       this.getUserInfo();
     }
