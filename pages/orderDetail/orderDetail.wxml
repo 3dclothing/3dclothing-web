@@ -1,4 +1,9 @@
 <!--pages/orderDetail/orderDetail.wxml-->
 <view>
-  <noOrder />
+  <block wx:if="{{orderDetail && dataReady}}">
+
+  </block>
+  <block wx:elif="dataReady">
+    <noOrder />
+  </block>
 </view>
