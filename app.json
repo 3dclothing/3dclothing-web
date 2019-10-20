@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/expressDetail/expressDetail",
     "pages/home/home",
     "pages/orderDetail/orderDetail",
     "pages/index/index",

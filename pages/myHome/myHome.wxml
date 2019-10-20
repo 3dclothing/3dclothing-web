@@ -32,7 +32,7 @@
       <view class='small-text'>已完成</view>
       <view class="badge">15</view>
     </view>
-    <view bindtap="goOrderDetail" data-title="物流中心">
+    <view bindtap="goExpressDetail">
       <icon iconName="logistics" width='58rpx' height='42rpx' />
       <view class='small-text'>物流中心</view>
       <view class="badge">99+</view>
