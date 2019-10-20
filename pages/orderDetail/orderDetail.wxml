@@ -1,7 +1,28 @@
 <!--pages/orderDetail/orderDetail.wxml-->
 <view>
   <block wx:if="{{orderDetail && dataReady}}">
-
+    <view>
+      <view>
+        单号： {{orderDetail.orderNo}}
+      </view>
+      <view>
+        <view>收货人：麦琪</view>
+        <view>收货地址：广东 / 广州市 / 天河区 / 热点创意园</view>
+      </view>
+      <view>
+        <view>
+          <image />
+          <view>
+            <view>纯羊毛定制打底羊毛衫</view>
+            <view>轻盈柔软柔糯如肌双倍保暖</view>
+            <view>
+              <view>驼色款</view><view>x1</view>
+            </view>
+            <view>预计2019-09-21前发货</view>
+          </view>
+        </view>
+      </view>
+    </view>
   </block>
   <block wx:elif="dataReady">
     <noOrder />

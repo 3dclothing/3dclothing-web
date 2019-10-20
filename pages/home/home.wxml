@@ -6,7 +6,7 @@
         <block wx:for="{{background}}" wx:key="*this">
           <swiper-item>
             <view class="swiper-item {{item}}">
-              <image src="../../public/image/home-banner.png" mode="aspectFill" />
+              <image src="../../public/image/homeBanner.png" mode="aspectFill" />
             </view>
           </swiper-item>
         </block>
