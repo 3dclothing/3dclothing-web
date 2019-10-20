@@ -3,7 +3,7 @@
     <block wx:if="{{expressDetail && dataReady}}">
       <view>
         <view class="orderNo">
-          单号： {{expressDetail.orderNo}}
+          物流编号： {{expressDetail.orderNo}}
         </view>
         <view class="address">
           <view>收货人：麦琪</view>
@@ -21,12 +21,43 @@
             </view>
           </view>
 
+          <view>
+            <view class="subtitle">
+              物流详情
+            </view>
+            <view>
+              物流详情 物流详情物 流详情
+            </view>
+          </view>
+          
+
           <view class="activity">
             <view class="subtitle">
               支付信息
             </view>
-            <view>活动优惠：-¥32</view>
-            <view>实付：<text style="color: #000000;">¥2130</text></view>
+            <view class="display-flex">
+              <view class="flex-full">商品总额</view>
+              <view>-¥32</view>
+            </view>
+            <view class="display-flex">
+              <view class="flex-full">运费</view>
+              <text style="color: #000000;">+ ¥10</text>
+            </view>
+          </view>
+
+          <view class="activity">
+            <view class="display-flex">
+              <view class="flex-full" style="font-size: 32rpx; color: #000;">总计</view>
+              <view style="color: #9A0000;">¥3290</view>
+            </view>
+            <view class="display-flex">
+              <view class="flex-full">订单编号</view>
+              <view style="color: #000000;">9900998765433</view>
+            </view>
+            <view class="display-flex">
+              <view class="flex-full">下单时间</view>
+              <view style="color: #000000;">2019-10-10</view>
+            </view>
           </view>
           
         </view>
