@@ -2,7 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    url: "http://localhost:8000/loader.html?id=100000"
+    url: "https://www.peajs.top/wexb-view/loader.html"
   },
 
   postMessage(e) {
