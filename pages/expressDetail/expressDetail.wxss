@@ -12,6 +12,11 @@
   padding-bottom: 40rpx;
 }
 
+.expressDetail .subtitle {
+  color: #000000;
+  font-size: 32rpx;
+}
+
 .expressDetail .orderNo  {
   color: #000000;
   font-size: 28rpx;
