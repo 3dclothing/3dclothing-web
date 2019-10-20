@@ -84,7 +84,7 @@ Page({
   goOrderDetail(e) {
     const title = e.currentTarget.dataset.title;
     wx.navigateTo({
-      url: `../orderDetail/orderDetail?title=${title}`,
+      url: `../orderDetail/orderDetail?title=${encodeURIComponent(title)}`,
     })
   },
 

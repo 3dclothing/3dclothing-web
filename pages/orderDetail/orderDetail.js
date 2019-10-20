@@ -5,14 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    orderDetail: {},
+    dataReady: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getOrderDetail();
+  },
 
+  getOrderDetail() {
+    let orderDetail = {
+      orderNo: '70070615687921375'
+    }
+    this.setData({
+      dataReady: true,
+      orderDetail,
+    })
   },
 
   /**
@@ -25,12 +36,12 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function (res) {
+  onShow: function () {
     let pages = getCurrentPages();
     let currPage = pages[pages.length - 1]; //当前页
     console.log('currPage', currPage)
     wx.setNavigationBarTitle({
-      title: currPage.options.title,
+      title: decodeURIComponent(currPage.options.title),
     })
   },
 
