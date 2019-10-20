@@ -1,3 +1,9 @@
  <view>
-   <web-view src="https://www.peajs.top/threejs-loader-demo-master/loader.html" />
+<!-- <web-view src="{{url}}" bindmessage="postMessage" /> -->
+
+<!-- <web-view src="https://www.peajs.top/threejs-loader-demo-master/loader.html" /> -->
+<web-view src="https://www.peajs.top/web-view/loader.html" />
  </view>
+
+
+<!-- <web-view src="{{url}}" bindmessage="postMessage" /> -->
