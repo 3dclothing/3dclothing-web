@@ -88,6 +88,12 @@ Page({
     })
   },
 
+  goExpressDetail() {
+    wx.navigateTo({
+      url: `../expressDetail/expressDetail`,
+    })
+  },
+
   register() {
     wx.navigateTo({
       url: `../register/register`,

@@ -9,6 +9,7 @@ Page({
     console.log("11", e)
   },
   onLoad: function () {
+    wx.hideTabBar();
     wx.onMemoryWarning(function () {
       console.log('onMemoryWarningReceive')
     })
