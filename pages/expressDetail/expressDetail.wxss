@@ -13,6 +13,7 @@
 }
 
 .expressDetail .subtitle {
+  padding-top: 10px;
   color: #000000;
   font-size: 32rpx;
 }
@@ -43,7 +44,7 @@
 }
 
 .expressDetail .activity {
-  padding: 40rpx;
+  padding: 0 0 40rpx 0;
   line-height: 50rpx;
 }
 

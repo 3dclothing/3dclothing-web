@@ -20,10 +20,11 @@
               </view>
             </view>
           </view>
-          <view class="subtitle">
-            支付信息
-          </view>
+
           <view class="activity">
+            <view class="subtitle">
+              支付信息
+            </view>
             <view>活动优惠：-¥32</view>
             <view>实付：<text style="color: #000000;">¥2130</text></view>
           </view>
