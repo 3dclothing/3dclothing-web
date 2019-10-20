@@ -1,2 +1,3 @@
-<!--pages/clothing/clothing.wxml-->
-<text>pages/clothing/clothing.wxml</text>
+ <view>
+   <web-view src="https://www.peajs.top/threejs-loader-demo-master/loader.html" />
+ </view>
