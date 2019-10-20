@@ -80,10 +80,11 @@ Page({
     });
   },
 
-  /** 心理测试列表 */
-  goXlcsList() {
+  /** 订单 */
+  goOrderDetail(e) {
+    const title = e.currentTarget.dataset.title;
     wx.navigateTo({
-      url: `../xlcsList/xlcsList`,
+      url: `../orderDetail/orderDetail?title=${title}`,
     })
   },
 

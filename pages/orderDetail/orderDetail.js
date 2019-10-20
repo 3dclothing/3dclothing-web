@@ -26,9 +26,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (res) {
-    console.log('options', res)
+    let pages = getCurrentPages();
+    let currPage = pages[pages.length - 1]; //当前页
+    console.log('currPage', currPage)
     wx.setNavigationBarTitle({
-      title: '已付款订单'
+      title: currPage.options.title,
     })
   },
 
