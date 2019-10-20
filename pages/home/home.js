@@ -50,8 +50,6 @@ Page({
         _this.setData({
           userInfo: res.data,
         });
-        _this.getUserInfo();
-        _this.getPsyList();
       },
     });
   },
@@ -92,24 +90,6 @@ Page({
   goMatch() {
     wx.navigateTo({
       url: `../matcheXz/matcheXz`,
-    })
-  },
-
-  /** 获取心理测试 */
-  getPsyList() {
-    Api.getPsyList().then((result) => {
-      this.setData({
-        psyTest: result.data,
-      })
-    })
-  },
-
-  /** 运势分析  */
-  getHoroscopet(e) {
-    const consName = this.data.userInfo.constellation ? this.data.userInfo.constellation : '白羊座';
-    const { type } = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: '../realXzysDetail/realXzysDetail?consName='+consName+'&type='+type
     })
   },
 

@@ -30,19 +30,19 @@
         "pagePath": "pages/home/home",
         "text": "广场",
         "iconPath": "public/image/menu_1.png",
-        "selectedIconPath": "public/image/menu_1_active.png"
+        "selectedIconPath": "public/image/menu_1.png"
       },
       {
         "pagePath": "pages/clothing/clothing",
         "text": "缘分",
         "iconPath": "public/image/menu_2.png",
-        "selectedIconPath": "public/image/menu_2_active.png"
+        "selectedIconPath": "public/image/menu_2.png"
       },
       {
         "pagePath": "pages/myHome/myHome",
         "text": "我的",
         "iconPath": "public/image/menu_3.png",
-        "selectedIconPath": "public/image/menu_3_active.png"
+        "selectedIconPath": "public/image/menu_3.png"
       }
     ]
   },
