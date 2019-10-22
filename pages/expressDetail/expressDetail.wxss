@@ -8,7 +8,7 @@
 .expressDetail {
   background: #ffffff;
   color: #9B9B9B;
-  font-size: 24rpx;
+  font-size: 28rpx;
   padding-bottom: 40rpx;
 }
 
@@ -22,19 +22,27 @@
   color: #000000;
   font-size: 28rpx;
   padding: 20rpx 40rpx;
-  border-top: 1rpx solid  #D8D8D860;
-  border-bottom: 1rpx solid  #D8D8D860;
+  /* border-top: 1rpx solid  #D8D8D860;
+  border-bottom: 1rpx solid  #D8D8D860; */
 }
 
 .expressDetail .address {
-  padding: 20rpx 40rpx 50rpx 40rpx;
+  padding: 30rpx;
+  font-size: 28rpx;
+  box-shadow: -2px 0px 8px #efefef;
+  color: #000000;
+  margin: 30rpx 20rpx;
 }
 
 .expressDetail .order-info {
   padding: 30rpx 0;
-  border-top: 6rpx solid #F7F7F7;
-  border-bottom: 6rpx solid #F7F7F7;
   font-size: 20rpx;
+  box-shadow: -2px 0px 8px #efefef;
+}
+
+.expressDetail .order-info .title {
+  color: #000000; 
+  font-size: 26rpx;
 }
 
 .expressDetail .order-info image {
@@ -43,9 +51,14 @@
   padding: 0 20rpx;
 }
 
-.expressDetail .activity {
-  padding: 0 0 40rpx 0;
+.expressDetail .order-box {
+  padding: 20rpx 0;
   line-height: 50rpx;
+}
+
+.expressDetail .price {
+  color: #000000;
+  font-size: 28rpx;
 }
 
 .expressDetail  .footer {

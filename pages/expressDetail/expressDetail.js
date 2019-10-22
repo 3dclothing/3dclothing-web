@@ -23,11 +23,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let pages = getCurrentPages();
-    let currPage = pages[pages.length - 1]; //当前页
-    console.log('currPage', currPage)
     wx.setNavigationBarTitle({
-      title: decodeURIComponent(currPage.options.title),
+      title: decodeURIComponent('物流中心'),
     })
   },
 

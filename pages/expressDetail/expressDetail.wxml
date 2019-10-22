@@ -13,15 +13,18 @@
           <view class="display-flex order-info">
             <image src="../../public/image/orderImg.png" />
             <view class="flex-full">
-              <view style="color: #000000; font-size: 26rpx">纯羊毛定制打底羊毛衫</view>
+              <view class="display-flex">
+                <view class="flex-full title">纯羊毛定制打底羊毛衫</view>
+                <view style="color: #4A4A4A; font-size: 20rpx">查看详情</view>
+              </view>
               <view>轻盈柔软柔糯如肌双倍保暖</view>
-              <view class="display-flex" style="padding: 40rpx 0 20rpx 0;">
-                <view class="flex-full">驼色款</view><view style="color: #000000">¥2130</view>
+              <view class="display-flex" style="padding: 20rpx 0 20rpx 0;">
+                <view class="flex-full">驼色款 x 1</view><view class="price">¥2130</view>
               </view>
             </view>
           </view>
 
-          <view>
+          <view class="order-box">
             <view class="subtitle">
               物流详情
             </view>
@@ -31,32 +34,32 @@
           </view>
           
 
-          <view class="activity">
+          <view class="order-box">
             <view class="subtitle">
               支付信息
             </view>
             <view class="display-flex">
               <view class="flex-full">商品总额</view>
-              <view>-¥32</view>
+              <view class="price">-¥32</view>
             </view>
             <view class="display-flex">
               <view class="flex-full">运费</view>
-              <text style="color: #000000;">+ ¥10</text>
+              <text class="price">+ ¥10</text>
             </view>
           </view>
 
-          <view class="activity">
+          <view class="order-box">
             <view class="display-flex">
               <view class="flex-full" style="font-size: 32rpx; color: #000;">总计</view>
-              <view style="color: #9A0000;">¥3290</view>
+              <view class="price" style="color: #9A0000;">¥3290</view>
             </view>
             <view class="display-flex">
               <view class="flex-full">订单编号</view>
-              <view style="color: #000000;">9900998765433</view>
+              <view class="price">9900998765433</view>
             </view>
             <view class="display-flex">
               <view class="flex-full">下单时间</view>
-              <view style="color: #000000;">2019-10-10</view>
+              <view class="price">2019-10-10</view>
             </view>
           </view>
           
