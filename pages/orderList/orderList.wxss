@@ -1,10 +1,11 @@
-.orderListpage {
-  /* background: #979797; */
+page {
+  background: #f8f8f8;
 }
 
 .orderListpage .tab {
   font-size: 32rpx;
   color: #3E3D3D;
+  background: #ffffff;
 }
 
 .orderListpage .subtab {
@@ -15,7 +16,7 @@
 .orderListpage .subtab .active {
   color: #000000; 
   font-weight: 600;
-  border-bottom: 4rpx solid #E39BF0;
+  border-bottom: 4rpx solid #000000;
   line-height: 80rpx;
   padding-bottom: 16rpx;
 }
@@ -25,12 +26,14 @@
   border-bottom: 2px solid #efefef;
   color: #7F8389;
   font-size: 28rpx;
+  background: #ffffff;
 }
 .orderListpage .head {
   width: 120rpx;
   height: 120rpx;
   border-radius: 100rpx;
   padding: 0 20rpx;
+  background: #ffffff;
 }
 .orderListpage .theme-text {
   font-size: 32rpx;
@@ -51,6 +54,7 @@
   padding: 100rpx;
   color: #999999;
   text-align: center;
+  background: #ffffff;
 }
 
 .orderListpage .order-info {
@@ -59,6 +63,7 @@
   /* border-bottom: 6rpx solid #F7F7F7; */
   font-size: 20rpx;
   margin: 20rpx;
+  background: #ffffff;
 }
 
 .orderListpage .order-info image {
