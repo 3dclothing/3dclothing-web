@@ -1,0 +1,106 @@
+.orderListpage {
+  /* background: #979797; */
+}
+
+.orderListpage .tab {
+  font-size: 32rpx;
+  color: #3E3D3D;
+}
+
+.orderListpage .subtab {
+  flex: 0.33;
+  text-align: center;
+}
+
+.orderListpage .subtab .active {
+  color: #000000; 
+  font-weight: 600;
+  border-bottom: 4rpx solid #E39BF0;
+  line-height: 80rpx;
+  padding-bottom: 16rpx;
+}
+
+.orderListpage .item-cell {
+  padding: 20rpx 0;
+  border-bottom: 2px solid #efefef;
+  color: #7F8389;
+  font-size: 28rpx;
+}
+.orderListpage .head {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+  padding: 0 20rpx;
+}
+.orderListpage .theme-text {
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.orderListpage .head image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+}
+
+.orderListpage .time {
+  padding-right: 20rpx;
+}
+
+.no-data {
+  padding: 100rpx;
+  color: #999999;
+  text-align: center;
+}
+
+.orderListpage .order-info {
+  padding: 30rpx 20rpx;
+  /* border-top: 6rpx solid #F7F7F7; */
+  /* border-bottom: 6rpx solid #F7F7F7; */
+  font-size: 20rpx;
+  margin: 20rpx;
+}
+
+.orderListpage .order-info image {
+  width: 80px;
+  height: 84px;
+  padding: 0 20rpx;
+}
+
+.orderListpage  .order-price {
+  padding: 10rpx 0;
+  width: 100%;
+  text-align: right;
+  color: #9B9B9B;
+}
+
+.orderListpage .order-btns {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20rpx 0;
+  justify-content: flex-end;
+}
+
+.orderListpage .order-btns button {
+  padding: 0 20rpx;
+  border-radius: 60rpx;
+  border: 1rpx solid #000000;
+  color: #000000;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  width: 135rpx;
+  background: #ffffff;
+  margin-right: 20rpx;
+}
+
+.orderListpage .order-status {
+  color: #AB0909;
+  font-size: 24rpx;
+}
+
+.orderListpage .order-info .info-cell {
+  font-size: 28rpx;
+  color: #000000;
+  padding: 30rpx 0;
+}

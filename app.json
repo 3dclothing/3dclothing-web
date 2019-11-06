@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/expressDetail/expressDetail",
+    "pages/orderList/orderList",
     "pages/home/home",
+    
+    "pages/expressDetail/expressDetail",
     
     "pages/orderDetail/orderDetail",
     "pages/index/index",
@@ -11,7 +13,6 @@
     "pages/myImages/myImages",
     "pages/userDetail/userDetail",
     "pages/myHome/myHome",
-    "pages/fateList/fateList",
     "pages/clothing/clothing",
     "pages/contract/contract"
   ],

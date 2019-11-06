@@ -3,14 +3,14 @@ import * as Api from '../../service/api.service';
 Page({
   data: {
     _active: '1',
-    listLikes: [] as any[],
+    listLikes: [],
   },
 
-  onLoad: function (options: any) {
-    this.setData!({
+  onLoad: function (options) {
+    this.setData({
       _active: options.type,
     });
-    this.getUsersListLikes(this.data._active);
+    // this.getUsersListLikes(this.data._active);
   },
 
   
@@ -19,7 +19,7 @@ Page({
   },
 
   /** 获取对应喜欢类别的用户列表 */
-  getUsersListLikes(active: string) {
+  getUsersListLikes(active) {
     let type = 'likeMe';
     switch (active) {
       case '1':
@@ -35,16 +35,16 @@ Page({
         break;
     }
     const params = { type, }
-    Api.getUsersListLikes(params).then((result: any) => {
+    Api.getUsersListLikes(params).then((result) => {
       if (result) {
-        const listLikes:any = result.data;
-        listLikes.forEach((like: any) => {
+        const listLikes = result.data;
+        listLikes.forEach((like) => {
           if (like.photos && like.photos.length) {
             like.avatarUrl = like.photos[0]
           }
         })
         
-        this.setData!({
+        this.setData({
           listLikes,
         });
       }
@@ -52,16 +52,16 @@ Page({
   },
 
   /** 切换tab */
-  switchTab(e: any) {
+  switchTab(e) {
     const index = e.currentTarget.dataset.index;
-    this.setData!({
+    this.setData({
       _active: index,
     });
-    this.getUsersListLikes(this.data._active);
+    // this.getUsersListLikes(this.data._active);
   },
 
   /** 详情 */
-  userDetail(e: any) {
+  userDetail(e) {
     const { openid } = e.currentTarget.dataset;
     wx.navigateTo({
       url: `../userDetail/userDetail?openid=${openid}`,

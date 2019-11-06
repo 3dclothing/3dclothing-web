@@ -88,6 +88,13 @@ Page({
     })
   },
 
+  goOrderList(e) {
+    const type = e.currentTarget.dataset.type;
+    wx.navigateTo({
+      url: `../orderList/orderList?type=${type}`,
+    })
+  },
+
   goExpressDetail() {
     wx.navigateTo({
       url: `../expressDetail/expressDetail`,

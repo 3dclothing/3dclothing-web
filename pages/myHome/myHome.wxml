@@ -17,7 +17,7 @@
   </view>
 
   <view class='display-flex home-center' style="border-top: 1rpx solid #D8D8D870">
-    <view bindtap="goOrderDetail" data-title="未付款订单">
+    <view bindtap="goOrderList" data-type="1">
       <icon iconName="nopay" width='51rpx' height='50rpx' />
       <view class='small-text'>未付款</view>
       <view class="badge">1</view>
