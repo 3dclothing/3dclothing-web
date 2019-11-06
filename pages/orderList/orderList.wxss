@@ -83,7 +83,6 @@ page {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 20rpx 0;
   justify-content: flex-end;
 }
 
