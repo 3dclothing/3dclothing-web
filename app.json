@@ -1,13 +1,10 @@
 {
   "pages": [
-    "pages/home/home",
-    
-    "pages/orderList/orderList",
-    
-    "pages/expressDetail/expressDetail",
-    
-    "pages/orderDetail/orderDetail",
     "pages/index/index",
+    "pages/home/home",
+    "pages/orderList/orderList",
+    "pages/expressDetail/expressDetail",
+    "pages/orderDetail/orderDetail",
     "pages/registerPhone/registerPhone",
     "pages/register/register",
     "pages/registerInfo/registerInfo",

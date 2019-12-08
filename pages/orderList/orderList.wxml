@@ -46,6 +46,37 @@
     </view>
   </view>
 
+  <view class="order-info">
+    <view class="display-flex info-cell">
+      <view class="flex-full">张家港牧羊人有限公司</view>
+      <view class="order-status">等待买家付款</view>
+    </view>
+    <view class="display-flex" style="align-items: flex-start;">
+      <image src="../../public/image/orderImg.png" />
+      <view class="flex-full">
+        <view class="display-flex" style="font-size: 26rpx; color: #000000;">
+           <view class="flex-full">纯羊毛定制打底羊毛衫</view>
+           <view>¥ 2130</view>
+        </view>
+        <view class="display-flex"  style="color: #9B9B9B" >
+          <view class="flex-full">轻盈柔软柔糯如肌双倍保暖</view>
+          <view>1</view>
+        </view>
+        <view class="display-flex" style="color: #9B9B9B;padding-top: 10px;">
+          <view class="flex-full">驼色款</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="order-price">共1件商品 合计：<text style="color: #000000;font-size: 24rpx;">¥2130.00</text></view>
+    <view class="order-btns">
+      <view class="flex-full"></view>
+      <button bindtap="defaultTap">付款</button>
+      <button bindtap="defaultTap">付款</button>
+      <button bindtap="defaultTap">付款</button>
+    </view>
+  </view>
+
   <block wx:if="{{listLikes.length > 0}}">
     <view class="display-flex item-cell" wx:for="{{listLikes}}" bindtap="userDetail" data-openid="{{item.openid}}" wx:key="{{item.id}}">
       <view class="head">
