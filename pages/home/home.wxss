@@ -51,9 +51,12 @@
 }
 
 .home-page .sub-title {
-  padding: 40rpx;
-  text-align: center;
+  margin: 30rpx 0;
+  text-align: left;
   color: #000000;
+  border-left: 8rpx solid #000000;
+  padding: 0px 10rpx;
+  font-weight: 600;
 }
 
 .item-1 {

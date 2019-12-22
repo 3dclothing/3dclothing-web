@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/home/home",
+    "pages/index/index",
     "pages/orderList/orderList",
     "pages/expressDetail/expressDetail",
     "pages/orderDetail/orderDetail",
@@ -17,7 +17,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "XXX",
+    "navigationBarTitleText": "牧羊人试穿",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -28,19 +28,19 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "广场",
+        "text": "",
         "iconPath": "public/image/menu_1.png",
         "selectedIconPath": "public/image/menu_1.png"
       },
       {
         "pagePath": "pages/clothing/clothing",
-        "text": "缘分",
+        "text": "",
         "iconPath": "public/image/menu_2.png",
         "selectedIconPath": "public/image/menu_2.png"
       },
       {
         "pagePath": "pages/myHome/myHome",
-        "text": "我的",
+        "text": "",
         "iconPath": "public/image/menu_3.png",
         "selectedIconPath": "public/image/menu_3.png"
       }

@@ -13,7 +13,7 @@
     <!--cover-image src="../public/image/menu_3_active.png"></cover-image-->
     <cover-view class="big-item">
       <cover-view style="font-size: 25px;padding-top: 10px;">VR</cover-view>
-      <cover-view >试装</cover-view>
+      <cover-view ></cover-view>
     </cover-view>
   </cover-view>
   <cover-view class="tab-bar-item" data-path="../myHome/myHome" data-index="2" bindtap="switchTab">
